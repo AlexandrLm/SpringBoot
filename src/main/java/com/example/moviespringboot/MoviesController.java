@@ -30,6 +30,10 @@ public class MoviesController {
     public List<Movies> findMoviesByTitle(@RequestParam(name="title") String title) {
         return moviesService.findMoviesByTitle(title);
     }
+    @GetMapping("/findby") //Поиск по фрагменту
+    public List<Movies> findMoviesByTitleFragment(@RequestParam(name="title") String Title) {
+        return moviesService.findMoviesByTitleFragment(Title);
+    }
 
     @PostMapping
     public void addMovies(@RequestBody Movies movies) {

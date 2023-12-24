@@ -37,4 +37,8 @@ public class MoviesService {
     public List<Movies> findMoviesByTitle(String Title) {
         return moviesRepository.findByTitleIgnoreCase(Title);
     }
+
+    public List<Movies> findMoviesByTitleFragment(String Title) {
+        return moviesRepository.findByTitleContaining(Title);
+    }
 }
